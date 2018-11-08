@@ -1,0 +1,8 @@
+.card-body{
+    padding: 0.5rem !important;
+}
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
