@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '112.175.184.94',
-	'username' => 'lifedict',
-	'password' => 'lifedict1',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => 'autoset',
 	'database' => 'lifedict',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
@@ -94,3 +94,4 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+

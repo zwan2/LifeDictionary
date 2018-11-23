@@ -1,3 +1,4 @@
+
 <!-- Modal -->
 <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
@@ -73,35 +74,100 @@
   </div>
 </div>
 
+
+
 <div class="container">
 	<h1>Computers and Electronics</h1>
-	<div class="card-deck text-center">
-		<div class="card card-detail" data-toggle="modal" data-target="#detailModal">
-		  <img class="card-img-top" src="https://www.wikihow.com/images/thumb/0/0b/Log-In-Step-28-Version-2.jpg/-crop-224-192-224px-nowatermark-Log-In-Step-28-Version-2.jpg" alt="Card image cap">
-		  <div class="card-body">
-		    <p class="card-text">How to login</p>
-		  </div>
-		</div>
-		<div class="card card-detail">
-		  <img class="card-img-top" src="https://www.wikihow.com/images/thumb/9/93/Connect-PC-Internet-to-Mobile-via-WiFi-Step-18.jpg/-crop-224-192-224px-nowatermark-Connect-PC-Internet-to-Mobile-via-WiFi-Step-18.jpg" alt="Card image cap">
-		  <div class="card-body">
-		    <p class="card-text">How to Connect PC Internet to Mobile via WiFi</p>
-		  </div>
-		</div>
-	</div>
-	<div class="card-deck text-center">
-		<div class="card card-detail">
-		  <img class="card-img-top" src="https://www.wikihow.com/images/thumb/d/db/Turn-On-AirPlay-Step-21.jpg/-crop-127-120-127px-Turn-On-AirPlay-Step-21.jpg" alt="Card image cap">
-		  <div class="card-body">
-		    <p class="card-text">How to Wipe Clean a Computer and Start Over</p>
-		  </div>
 
+<?
+	$count =0;
+	foreach($resultList as $result) {
+	
+		if($count%2 == 0 ) {
+		?>
+		<div class="card-deck text-center">
+			<div class="card card-detail" data-toggle="modal" data-target="#detailModal">
+			  <img class="card-img-top" src="<?=$result->main_image?>" alt="Card image cap">
+			  <div class="card-body">
+			    <p class="card-text"><?=$result->title?></p>
+			  </div>
+			</div>
+		<?
+		} else {
+		?>
+			<div class="card card-detail">
+			  <img class="card-img-top" src="<?=$result->main_image?>" alt="Card image cap">
+			  <div class="card-body">
+			    <p class="card-text"><?=$result->title?></p>
+			  </div>
+			</div>
 		</div>
-		<div class="card card-detail">
-		  <img class="card-img-top" src="https://www.wikihow.com/images/thumb/9/91/Get-Data-from-.Nbf-File-Step-11.jpg/-crop-127-120-127px-Get-Data-from-.Nbf-File-Step-11.jpg" alt="Card image cap">
-		  <div class="card-body">
-		    <p class="card-text">How to Join a Wireless Network from Your iPhone</p>
-		  </div>
-		</div>			
-	</div>
+		<?
+		}
+
+		$count++;
+	
+	
+	}
+?>
+
+
 </div>
+
+
+<script>
+$(document).ready(function(){
+  $(document).ready(function(){
+    //detailModal
+    $(document).on('click', '#detailModal', function(e){
+  
+     e.preventDefault();
+     var booking_id = $(this).data('id'); // get id of clicked row
+     $('#dynamic-content').html(''); // leave this div blank
+  
+     $.ajax({
+          url: 'getmybooking.php',
+          type: 'GET',
+          data: 'id='+booking_id,
+          dataType: 'html'
+     })
+     .done(function(data){
+          console.log(data); 
+          $('#dynamic-content').html(''); // blank before load.
+          $('#dynamic-content').html(data); // load here
+     })
+     .fail(function(){
+          $('#dynamic-content').html('Something went wrong, Please try again...');
+     });
+
+    });
+
+
+    //승인, 거절 message modal
+    $(document).on('click', '#smodal_toggle', function(e){
+  
+     e.preventDefault();
+  
+     var booking_id = $(this).data('id'); // get id of clicked row
+  
+     $('#sdynamic-content').html(''); // leave this div blank
+  
+     $.ajax({
+          url: 'getmybooking_message.php',
+          type: 'GET',
+          data: 'id='+booking_id,
+          dataType: 'html'
+     })
+     .done(function(data){
+          console.log(data); 
+          $('#sdynamic-content').html(''); // blank before load.
+          $('#sdynamic-content').html(data); // load here
+     })
+     .fail(function(){
+          $('#sdynamic-content').html('Something went wrong, Please try again...');
+     });
+
+    });
+  })
+});
+</script>
