@@ -6,3 +6,11 @@
     height: 15vw;
     object-fit: cover;
 }
+
+.list-header-icon {
+	font-size: 2.5rem !important;
+}
+
+#clip_target {
+	color: #343a40 !important;
+}
