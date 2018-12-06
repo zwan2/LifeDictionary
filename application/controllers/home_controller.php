@@ -20,8 +20,7 @@ class Home_controller extends CI_Controller {
 	 */
 	public function index() {
 		$this->load->model('home_model');
-		$resultHome = $this->home_model->getHome();
-		 	
+		$resultHome = $this->home_model->getHome();	 	
 		$this->load->view('templates/header');
 		$this->load->view('index', array('resultHome'=>$resultHome));
 		$this->load->view('templates/footer');
@@ -30,12 +29,18 @@ class Home_controller extends CI_Controller {
 	public function list() {
 		$this->load->model('list_model');
 		$resultList = $this->list_model->getList(1);
-
 		$this->load->view('templates/header');
 		$this->load->view('list', array('resultList'=>$resultList));
 		$this->load->view('templates/footer');
 	}
 
+	public function modal() {
+		$this->load->model('list_model');
+		$resultList = $this->list_model->getList(1);
+		$this->load->view('templates/header');
+		$this->load->view('modal', array('resultList'=>$resultList));
+		$this->load->view('templates/footer');
+	}
 
 	public function getDetail() {
     	$information_id = $_GET['information_id'];
@@ -62,22 +67,17 @@ class Home_controller extends CI_Controller {
 
 
 	        <div class="modal-header">
-		        <h5 class="modal-title" id="exampleModalLabel"><?=$row->title?></h5>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
+				<i class="material-icons icon-title1" data-dismiss="modal">arrow_back</i>
+		        <i class="material-icons icon-title1 float-right" data-toggle="collapse" href="#collapseComment" role="button" aria-expanded="false" aria-controls="collapseComment">comment</i>
+				<i class="material-icons icon-title1 float-right">share</i>
 	      	</div>
 	      	<div class="modal-body">
-
+				<i class="material-icons icon1">computer</i>	
+			  	<h3 class="icon-title1"><?=$row->title?></h3>
+				<small class="font-weight-light Roboto font-weight-100">internets&computers>Computer</small>
+				<hr>
 		        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-				  <ol class="carousel-indicators">
-				  	<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-
-				  	<?
-				  		for($i=1; $i<$count; $i++) {
-				  			?><li data-target="#carouselExampleIndicators" data-slide-to="<?=$i?>"></li><?
-				  		}
-				  	?>
+				  
 				  </ol>
 				  <div class="carousel-inner">
 					<div class="carousel-item active"><img class="d-block w-100" src="<?=$imageArray[0]?>">
@@ -99,7 +99,7 @@ class Home_controller extends CI_Controller {
 				    <span class="sr-only">Next</span>
 				  </a>
 				</div>
-				<p class="text-muted"><?=$row->content?></p>
+				<p class="text-muted Roboto font-weight-100"><?=$row->content?></p>
 			
 			</div>
 			<div class="collapse" id="collapseComment">
@@ -108,6 +108,7 @@ class Home_controller extends CI_Controller {
 					<h5 class="card-title">Comment</h5>
 					<form method="post" action="makeComment" onsubmit="return comment_check();" name="comment">
 						<div class="input-group">
+							
 							<textarea class="form-control" aria-label="With textarea" name="comment"></textarea>
 							<input type="hidden" name="info_id" value="<?=$row->id?>">
 							
@@ -115,36 +116,29 @@ class Home_controller extends CI_Controller {
 								<button class="btn btn-outline-secondary" type="submit" id="button-addon2">Write</button>
 							</div>
 						</div>
+
 					</form>
 					<br>
 					<?
 					    foreach ($query2->result() as $row2) {
-					    	echo "<small> $row2->comment $row2->input_time </small><br/>";
+					    	echo "<small> $row2->comment 　　　　　　　　　　　$row2->input_time </small>";
+
+					    		
 					    };
 				       
 					?>
 				
 				</div>
 			</div>
-
-			<div class="modal-footer">
-		      	<a data-toggle="collapse" href="#collapseComment" role="button" aria-expanded="false" aria-controls="collapseComment">
-		      		<?=$row->comment_count?><i class="material-icons">comment</i>
-		        </a>
-
-		        <a id="kakao-link-btn" href="javascript:sendLink()">
-			       <span class="fs-13 text-gray-soft" id="clip_target">친구에게 공유</span>
-			      <img id='kakao_share_img' src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_small.png"/>
-			    </a>
-		   
-		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			</div>
 			<?
+
 			
 
     	}   
     }
 
+
+	
     public function makeComment() {
     	$info_id = $_POST['info_id'];
 		$comment = $_POST['comment'];

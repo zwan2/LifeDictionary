@@ -56,4 +56,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['list/:num'] = 'home_controller/list';
 $route['list/getDetail'] = 'home_controller/getDetail';
 $route['list/makeComment'] = 'home_controller/makeComment';
-//$route['getInfo']['GET'] = 'home_controller/getInfo';
+$route['modal']['GET'] = 'home_controller/modal';

@@ -1,3 +1,149 @@
+@font-face {
+	font-family: "coolVetica";
+	src: url(../etc/coolveticarg.ttf);
+}
+
+body {
+	font-family: coolVetica !important;
+	background-color: white;
+}
+h3, h5, h6 {
+	margin-bottom: 0;
+}
+
+a:hover {
+	text-decoration: none;
+}
+.icon1 {
+	background-color: #EF5350;
+}
+.icon2 {
+	background-color: #EC407A;
+}
+.icon3 {
+	background-color: #42A5F5;
+}
+.icon4 {
+	background-color: #7E57C2;
+}
+.icon5 {
+	background-color: #FFCA28;
+}
+.icon6 {
+	background-color: #9CCC65;
+}
+.icon7 {
+	background-color: #FFA726;
+}
+.icon8 {
+	background-color: #8D6E63;
+}
+.icon9 {
+	background-color: #5C6BC0;
+}
+
+.icon-title1 {
+	color: #EF5350 !important;
+}
+
+.icon-title2 {
+	color: #EC407A;
+}
+
+.icon-title3 {
+	color: #42A5F5;
+}
+
+.icon-title4 {
+	color: #7E57C2;
+}
+
+.icon-title5 {
+	color: #FFCA28;
+}
+
+.icon-title6 {
+	color: #9CCC65;
+}
+
+.icon-title7 {
+	color: #FFA726;
+}
+
+.icon-title8 {
+	color: #8D6E63;
+}
+
+.icon-title9 {
+	color: #5C6BC0;
+}
+.material-icons {
+	padding: 0.45em;
+	border-radius: 50%;
+	color: white;
+} 
+.Roboto {
+	font-family: Roboto !important;
+}
+.font-weight-100 {
+	font-weight: 100 !important;
+}
+
+
+/* NAVBAR */
+.navbar {
+	box-shadow: none !important;
+}
+.navbar-brand {
+	font-size: 1.5rem !important;
+}
+.navbar-toggler-icon {
+	width: 1em !important;
+	height: 1em !important;
+}
+/*
+.navbar-light .navbar-toggler-icon {
+	
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)'") !important;
+}
+*/
+.navbar-light .navbar-toggler {
+	border: none !important;
+}
+
+
+.list-header {
+	padding-left: 0.5em;
+	margin-bottom: 0.5em;
+}
+.list-group {
+	padding-top: 0 !important;
+}
+
+.list-group-item {
+	padding: 0.3em !important;
+}
+
+.list-group-item :first-child {
+	margin-right: 0.5em;
+}
+
+
+
+/* modal */
+.modal-header {
+	padding: 1rem 1rem 0 1rem !important;
+	display: block !important;
+}
+.modal-dialog {
+	margin: 0 !important;
+}
+
+
+
+
+
+
 .card-body{
     padding: 0.5rem !important;
 }
@@ -13,4 +159,21 @@
 
 #clip_target {
 	color: #343a40 !important;
+}
+
+.fab {
+	margin: 0 !important;
+	position: fixed;
+	z-index: 1;
+	right: 4vw;
+	bottom: 4vw;
+}
+
+.chatbot {
+	width: 100%;
+	height: 75vh;
+}
+
+.card-title {
+	color: #000000 !important;
 }

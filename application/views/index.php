@@ -1,20 +1,148 @@
 <div class="container">
-	<div class="card-deck text-center">
-		<?
-		foreach($resultHome as $result) {
-		?>
-			<div class="card bg-dark text-white">
-				<a href="list/<?=$result->id?>">
-				  <img class="card-img" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_166eeb78d1b%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_166eeb78d1b%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
-				  <div class="card-img-overlay">
-				    <h5 class="card-title text-center"><?=$result->title?></h5>
-				  </div>
-				</a>
-			</div>
-		<?
-		}
-		?>	
+
+	<h6 class="text-secondary list-header">internets & computers</h6>
+	<ul class="list-group">
+		<a href="/list/1">	
+			<li class="list-group-item">
+				
+					<i class="material-icons icon1">computer</i>
+					<h5 class="icon-title1">Computer</h5>
+			</li>
+		</a>
+		<a href="/list/1">
+		<li class="list-group-item">
+			<i class="material-icons icon2">wifi</i>
+			<h5 class="icon-title2">Wifi</h5>
+		</li>
+		</a>
+		<a href="/list/1">
+			<li class="list-group-item">
+				<i class="material-icons icon3">email</i>
+				<h5 class="icon-title3">Email</h5>
+			</li>
+	</a>
+
+		<li class="list-group-item">
+			<i class="material-icons icon4">settings_input_hdmi</i>
+			<h5 class="icon-title4">TV with HDMI</h5>
+		</li>
+
+		<li class="list-group-item">
+			<i class="material-icons icon5">build</i>
+			<h5 class="icon-title5">Returbish</h5>
+		</li>
+
+		<li class="list-group-item">
+			<i class="material-icons icon6">airplay</i>
+			<h5 class="icon-title6">AirPlay</h5>
+		</li>
 		
+	</ul>
+
+	<br><br>
+
+	<h6 class="text-secondary list-header">lifestyle</h6>
+	<ul class="list-group">
+		<li class="list-group-item">
+			<i class="material-icons icon1">fastfood</i>
+		<h5 class="icon-title1">SUBWAY</h5>
+
+		</li>
+		<li class="list-group-item">
+			<i class="material-icons icon2">fitness_center</i>
+			<h5 class="icon-title2">Exercise</h5>
+		</li>
+
+		<li class="list-group-item">
+			<i class="material-icons icon3">people</i>
+			<h5 class="icon-title3">Meeting people</h5>
+		</li>
+
+		<li class="list-group-item">
+			<i class="material-icons icon4">date_range</i>
+			<h5 class="icon-title4">Schedule</h5>
+		</li>
+
+		<li class="list-group-item">
+			<i class="material-icons icon5">face</i>
+			<h5 class="icon-title5">Skin care</h5>
+		</li>
+	</ul>
+	
+</div>
+
+
+
+<!--
+<div class="container">
+
+<h6 class="text-secondary list-header">internets & computers</h6>
+<ul class="list-group">
+  <li class="list-group-item">
+  	<i class="material-icons icon1">computer</i>
+	<h5>Login in & Join</h5>
+
+  </li>
+  <li class="list-group-item">
+  	<i class="material-icons icon2">wifi</i>
+		<h5>Connect to WIFI</h5>
+  </li>
+
+	<li class="list-group-item">
+  	<i class="material-icons icon3">email</i>
+		<h5>Send Email</h5>
+  </li>
+
+	<li class="list-group-item">
+  	<i class="material-icons icon4">settings_input_hdmi</i>
+		<h5>Connect PC to TV with HDMI</h5>
+  </li>
+
+	<li class="list-group-item">
+  	<i class="material-icons icon5">build</i>
+		<h5>How to Returbish a Computer</h5>
+  </li>
+
+	<li class="list-group-item">
+  	<i class="material-icons icon6">airplay</i>
+		<h5>How to Turn On AirPlay</h5>
+  </li>
+  
+</ul>
+
+<br><br>
+<h6 class="text-secondary list-header">lifestyle</h6>
+<ul class="list-group">
+  <li class="list-group-item">
+  	<i class="material-icons icon1">fastfood</i>
+	<h5>How to order SUBWAY</h5>
+
+  </li>
+  <li class="list-group-item">
+  	<i class="material-icons icon2">fitness_center</i>
+		<h5>How to exercise regularly</h5>
+  </li>
+
+	<li class="list-group-item">
+  	<i class="material-icons icon3">people</i>
+		<h5>Advantages of meeting people</h5>
+  </li>
+
+	<li class="list-group-item">
+  	<i class="material-icons icon4">date_range</i>
+		<h5>How to not forget the schedule</h5>
+  </li>
+
+	<li class="list-group-item">
+  	<i class="material-icons icon5">face</i>
+		<h5>Make skin care easier</h5>
+  </li>
+</ul>
+<i class="material-icons">
+computer
+</i>
 
 	</div>
 </div>
+
+-->

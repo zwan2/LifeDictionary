@@ -7,7 +7,12 @@
 
 
   <title>Life Dictionary</title>
+  <!--CSS-->
+  <!--
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
   <link rel="stylesheet" href="../public/css/style.css" type="text/css">
   
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -28,7 +33,7 @@
 
 <body>
   <div class="container">
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
    
       <a href="/" class="navbar-brand">Life Dictionary</a>
 
@@ -45,7 +50,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="intro.php">Login</a>     
+              <a class="nav-link" href="#">Login</a>     
             </li>
 
 
@@ -65,3 +70,34 @@
 
   </div>
 <br/>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">What are you curious about?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe
+            src="https://console.dialogflow.com/api-client/demo/embedded/e764c47e-8377-4878-95af-7846ee0fb6fb" class="chatbot">
+        
+        </iframe>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <button type="button" class="btn btn-secondary bmd-btn-fab fab" data-toggle="modal" data-target="#exampleModalLong">
+    <i class="material-icons">grade</i>
+  </button>
+</div>
