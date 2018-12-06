@@ -29,7 +29,7 @@ class Home_controller extends CI_Controller {
 	public function list() {
 		$this->load->model('list_model');
 		$resultList = $this->list_model->getList(1);
-		$this->load->view('templates/header');
+		$this->load->view('templates/header2');
 		$this->load->view('list', array('resultList'=>$resultList));
 		$this->load->view('templates/footer');
 	}
@@ -105,7 +105,7 @@ class Home_controller extends CI_Controller {
 			<div class="collapse" id="collapseComment">
 		  
 				<div class="card card-body">
-					<h5 class="card-title">Comment</h5>
+					<h5 class="card-title icon-title1">Comment</h5>
 					<form method="post" action="makeComment" onsubmit="return comment_check();" name="comment">
 						<div class="input-group">
 							
@@ -113,7 +113,7 @@ class Home_controller extends CI_Controller {
 							<input type="hidden" name="info_id" value="<?=$row->id?>">
 							
 							<div class="input-group-append">
-								<button class="btn btn-outline-secondary" type="submit" id="button-addon2">Write</button>
+								<button class="btn btn-link icon1 icon-title1" type="submit" id="button-addon2">Write</button>
 							</div>
 						</div>
 
